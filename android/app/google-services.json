@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "90753323040",
+    "firebase_url": "https://canktech-apps.firebaseio.com",
+    "project_id": "canktech-apps",
+    "storage_bucket": "canktech-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90753323040:android:ad82c8140a1bc7f1892c45",
+        "android_client_info": {
+          "package_name": "com.canktech.yofiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90753323040-h9mc8g4edma06dvb635stsaeokbsjte7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.canktech.yofiz",
+            "certificate_hash": "1f997ae17c5a3b4a58e937c7a4f01051e85e08ac"
+          }
+        },
+        {
+          "client_id": "90753323040-ut5r4hia1rgii7bonln7loajprbdn20r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIGYonqupobvtB_7dgs0-Wk2kacduUnJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90753323040-ut5r4hia1rgii7bonln7loajprbdn20r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
