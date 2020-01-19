@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yofiz/screens/confirm_pay.dart';
-import 'package:yofiz/utils/values/borders.dart';
 import 'package:yofiz/utils/values/colors.dart';
 import 'package:yofiz/utils/values/radii.dart';
 import 'package:yofiz/utils/values/shadows.dart';
@@ -14,6 +13,25 @@ class OtherFeesPayWidget extends StatelessWidget {
 
   void onPayButtonPressed(BuildContext context) => Navigator.push(
       context, MaterialPageRoute(builder: (context) => ConfirmPay()));
+
+  int _selectedPayment = 0;
+  List<DropdownMenuItem<int>> genderList = [];
+
+  void loadGenderList() {
+    genderList = [];
+    genderList.add(new DropdownMenuItem(
+      child: new Text('MTN Mobile Money'),
+      value: 0,
+    ));
+    genderList.add(new DropdownMenuItem(
+      child: new Text('VISA/MASTERCARD'),
+      value: 1,
+    ));
+    genderList.add(new DropdownMenuItem(
+      child: new Text('PAYPAL'),
+      value: 2,
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +158,8 @@ class OtherFeesPayWidget extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     Positioned(
-                      top: 0,
+                      left: 0,
+                      right: 0,
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
@@ -185,174 +204,67 @@ class OtherFeesPayWidget extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: 17,
+                      left: 15,
+                      top: 20,
+                      right: 20,
+                      bottom: 20,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Container(
-                              margin: EdgeInsets.only(left: 1),
-                              child: Text(
-                                "Student No.",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: AppColors.primaryText,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  letterSpacing: 1.458,
-                                ),
-                              ),
-                            ),
-                          ),
                           Container(
-                            height: 41,
-                            margin: EdgeInsets.only(left: 4, top: 9),
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryElement,
-                              border: Border.fromBorderSide(
-                                  Borders.secondaryBorder),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(14)),
-                            ),
-                            child: TextField(
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                              ),
-                              maxLines: 1,
-                              autocorrect: false,
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Container(
-                              margin: EdgeInsets.only(left: 6, top: 8),
-                              child: Text(
-                                "Amount",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: AppColors.primaryText,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  letterSpacing: 1.458,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 41,
-                            margin: EdgeInsets.only(left: 4, top: 9),
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryElement,
-                              border: Border.fromBorderSide(
-                                  Borders.secondaryBorder),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(14)),
-                            ),
-                            child: TextField(
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                              ),
-                              maxLines: 1,
-                              autocorrect: false,
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 8),
-                              child: Text(
-                                "Payment Type",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: AppColors.primaryText,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  letterSpacing: 1.458,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 41,
-                            margin: EdgeInsets.only(left: 4, top: 8),
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryElement,
-                              border: Border.fromBorderSide(
-                                  Borders.secondaryBorder),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(14)),
-                            ),
-                            child: TextField(
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                              ),
-                              maxLines: 1,
-                              autocorrect: false,
-                            ),
-                          ),
-                          Spacer(),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Container(
-                              margin: EdgeInsets.only(left: 4, bottom: 9),
-                              child: Text(
-                                "Reason",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: AppColors.primaryText,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  letterSpacing: 1.458,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 41,
-                            margin: EdgeInsets.only(left: 4),
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryElement,
-                              border: Border.fromBorderSide(
-                                  Borders.secondaryBorder),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(14)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 112,
-                                  height: 17,
-                                  margin: EdgeInsets.only(left: 19),
-                                  child: Opacity(
-                                    opacity: 0.6,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        hintText: "e.g Study Tour",
-                                        contentPadding: EdgeInsets.all(0),
-                                        border: InputBorder.none,
-                                      ),
-                                      style: TextStyle(
-                                        color: Color.fromARGB(255, 26, 26, 26),
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                      ),
-                                      maxLines: 1,
-                                      autocorrect: false,
-                                    ),
+                              height: 80,
+                              margin: EdgeInsets.only(left: 3, top: 4),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(14)),
                                   ),
+                                  labelText: 'Student No',
                                 ),
-                              ],
+                              )),
+                          Container(
+                              height: 80,
+                              margin: EdgeInsets.only(left: 3, top: 5),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(14)),
+                                  ),
+                                  labelText: 'Amount',
+                                ),
+                              )),
+                          Container(
+                            height: 60,
+                            margin: EdgeInsets.only(left: 3, top: 5),
+                            // child: new ListView(
+                            //   children: getFormWidget(),
+                            // ),
+                            child: DropdownButton(
+                              hint: new Text('Select Paymet Type'),
+                              items: genderList,
+                              value: _selectedPayment,
+                              onChanged: (value) {
+                                setState(() {
+                                  _selectedPayment = value;
+                                });
+                              },
+                              isExpanded: true,
                             ),
                           ),
+                          Container(
+                              height: 80,
+                              margin: EdgeInsets.only(left: 3, top: 15),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(14)),
+                                  ),
+                                  labelText: 'Reason',
+                                ),
+                              )),
                         ],
                       ),
                     ),
@@ -398,4 +310,6 @@ class OtherFeesPayWidget extends StatelessWidget {
       ),
     );
   }
+
+  void setState(Null Function() param0) {}
 }

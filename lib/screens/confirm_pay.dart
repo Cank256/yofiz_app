@@ -189,8 +189,10 @@ class ConfirmPay extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: 28,
-                      right: 5,
+                      left: 15,
+                      top: 20,
+                      right: 15,
+                      bottom: 20,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -224,7 +226,7 @@ class ConfirmPay extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w800,
                                       fontSize: 16,
                                       letterSpacing: 1.296,
                                     ),
@@ -263,7 +265,7 @@ class ConfirmPay extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w800,
                                       fontSize: 16,
                                       letterSpacing: 1.296,
                                     ),
@@ -302,7 +304,7 @@ class ConfirmPay extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w800,
                                       fontSize: 16,
                                       letterSpacing: 1.296,
                                     ),
@@ -341,7 +343,7 @@ class ConfirmPay extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w800,
                                       fontSize: 16,
                                       letterSpacing: 1.296,
                                     ),
@@ -352,7 +354,7 @@ class ConfirmPay extends StatelessWidget {
                           ),
                           Container(
                             height: 21,
-                            margin: EdgeInsets.only(top: 9, right: 2),
+                            margin: EdgeInsets.only(top: 9),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
@@ -380,7 +382,7 @@ class ConfirmPay extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w800,
                                       fontSize: 16,
                                       letterSpacing: 1.296,
                                     ),
@@ -419,7 +421,7 @@ class ConfirmPay extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w800,
                                       fontSize: 16,
                                       letterSpacing: 1.296,
                                     ),
@@ -458,7 +460,7 @@ class ConfirmPay extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w800,
                                       fontSize: 16,
                                       letterSpacing: 1.296,
                                     ),
@@ -497,7 +499,7 @@ class ConfirmPay extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w800,
                                       fontSize: 16,
                                       letterSpacing: 1.296,
                                     ),
@@ -506,11 +508,9 @@ class ConfirmPay extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Spacer(),
                           Container(
                             height: 21,
-                            margin:
-                                EdgeInsets.only(left: 2, right: 8, bottom: 11),
+                            margin: EdgeInsets.only(left: 2, right: 8, top: 10),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
@@ -537,7 +537,7 @@ class ConfirmPay extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         color: AppColors.primaryText,
-                                        fontWeight: FontWeight.w400,
+                                        fontWeight: FontWeight.w800,
                                         fontSize: 16,
                                         letterSpacing: 1.296,
                                       ),
@@ -548,7 +548,8 @@ class ConfirmPay extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: 1, right: 13),
+                            margin:
+                                EdgeInsets.only(left: 1, right: 13, top: 10),
                             child: Text(
                               "Amount in Words(total)  Five Hundred Thousand Shillings Only",
                               textAlign: TextAlign.left,

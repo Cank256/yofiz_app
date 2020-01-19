@@ -1,6 +1,6 @@
 # yofiz
 
-Simple Fast Secure
+A new Flutter project.
 
 ## Getting Started
 

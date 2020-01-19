@@ -180,8 +180,10 @@ class MmNum extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 28,
-                            right: 13,
+                            left: 15,
+                            top: 10,
+                            right: 20,
+                            bottom: 20,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
@@ -194,7 +196,6 @@ class MmNum extends StatelessWidget {
                                       color: AppColors.primaryText,
                                       fontWeight: FontWeight.w400,
                                       fontSize: 16,
-                                      letterSpacing: 1.296,
                                       height: 1.5625,
                                     ),
                                   ),
@@ -244,6 +245,14 @@ class MmNum extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                Spacer(),
+                                Align(
+                                  alignment: Alignment.topCenter,
+                                  child: Image.asset(
+                                    "assets/images/momo.png",
+                                    fit: BoxFit.none,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -285,12 +294,6 @@ class MmNum extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-            ),
-            Positioned(
-              child: Image.asset(
-                "assets/images/momo.png",
-                fit: BoxFit.none,
               ),
             ),
           ],

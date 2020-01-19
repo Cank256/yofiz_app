@@ -70,7 +70,7 @@ class Notifications extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(right: 86),
                       child: Text(
-                        "History",
+                        "Notifications",
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: AppColors.secondaryText,
