@@ -20,6 +20,7 @@ class _SchFeesPayState extends State<SchFeesPay> {
       context, MaterialPageRoute(builder: (context) => ConfirmPay()));
 
   final _formKey = GlobalKey<FormState>();
+  Key _amount = new GlobalKey(debugLabel: 'inputText');
   int _selectedPayment = 0;
   List<DropdownMenuItem<int>> genderList = [];
 
@@ -236,6 +237,7 @@ class _SchFeesPayState extends State<SchFeesPay> {
                                 height: 80,
                                 margin: EdgeInsets.only(left: 3, top: 5),
                                 child: TextField(
+                                  key: _amount,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                       borderRadius:

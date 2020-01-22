@@ -1,11 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:yofiz/screens/pay_prompt.dart';
 import 'package:yofiz/utils/values/borders.dart';
 import 'package:yofiz/utils/values/colors.dart';
 import 'package:yofiz/utils/values/radii.dart';
 import 'package:yofiz/utils/values/shadows.dart';
 
-class MmNum extends StatelessWidget {
+class MmNum extends StatefulWidget {
+  @override
+  _MmNumState createState() => _MmNumState();
+}
+
+class _MmNumState extends State<MmNum> {
   void onBackIconPressed(BuildContext context) {
     Navigator.pop(context);
   }
@@ -14,6 +22,9 @@ class MmNum extends StatelessWidget {
 
   void onPayButtonPressed(BuildContext context) => Navigator.push(
       context, MaterialPageRoute(builder: (context) => PayPrompt()));
+
+  String serverResponse = 'Server response';
+  Key _mnum = new GlobalKey(debugLabel: 'inputText');
 
   @override
   Widget build(BuildContext context) {
@@ -128,8 +139,8 @@ class MmNum extends StatelessWidget {
                     alignment: Alignment.topRight,
                     child: Container(
                       width: 311,
-                      height: 259,
-                      margin: EdgeInsets.only(top: 71, right: 24),
+                      height: 210,
+                      margin: EdgeInsets.only(top: 45, right: 24),
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
@@ -205,7 +216,8 @@ class MmNum extends StatelessWidget {
                                   child: Container(
                                     width: 244,
                                     height: 53,
-                                    margin: EdgeInsets.only(top: 22, right: 18),
+                                    margin: EdgeInsets.only(
+                                        top: 15, right: 18, bottom: 9),
                                     decoration: BoxDecoration(
                                       color: AppColors.primaryElement,
                                       border: Border.fromBorderSide(
@@ -223,6 +235,7 @@ class MmNum extends StatelessWidget {
                                           child: Opacity(
                                             opacity: 0.5,
                                             child: TextField(
+                                              key: _mnum,
                                               decoration: InputDecoration(
                                                 hintText: "0784881722",
                                                 contentPadding:
@@ -245,7 +258,6 @@ class MmNum extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Spacer(),
                                 Align(
                                   alignment: Alignment.topCenter,
                                   child: Image.asset(
@@ -260,15 +272,14 @@ class MmNum extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(),
                   Align(
                     alignment: Alignment.topCenter,
                     child: Container(
                       width: 235,
                       height: 52,
-                      margin: EdgeInsets.only(bottom: 130),
-                      child: FlatButton(
-                        onPressed: () => this.onPayButtonPressed(context),
+                      margin: EdgeInsets.only(top: 30),
+                      child: RaisedButton(
+                        onPressed: () => _makeGetRequest(),
                         color: AppColors.secondaryElement,
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
@@ -300,5 +311,20 @@ class MmNum extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _makeGetRequest() async {
+    Response response = await get(_localhost());
+    setState(() {
+      serverResponse = response.body;
+      print(serverResponse);
+    });
+  }
+
+  String _localhost() {
+    if (Platform.isAndroid)
+      return 'http://yofiz-momo-yofiz.apps.us-east-1.starter.openshift-online.com/';
+    else // for iOS simulator
+      return 'http://localhost:3000';
   }
 }
