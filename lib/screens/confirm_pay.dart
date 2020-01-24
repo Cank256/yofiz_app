@@ -190,7 +190,7 @@ class ConfirmPay extends StatelessWidget {
                     ),
                     Positioned(
                       left: 15,
-                      top: 20,
+                      top: 30,
                       right: 15,
                       bottom: 20,
                       child: Column(
@@ -508,45 +508,45 @@ class ConfirmPay extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Container(
-                            height: 21,
-                            margin: EdgeInsets.only(left: 2, right: 8, top: 10),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: Text(
-                                    "Charge",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: AppColors.primaryText,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                      letterSpacing: 1.134,
-                                    ),
-                                  ),
-                                ),
-                                Spacer(),
-                                Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: Container(
-                                    margin: EdgeInsets.only(bottom: 2),
-                                    child: Text(
-                                      "Ugx. 500",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: AppColors.primaryText,
-                                        fontWeight: FontWeight.w800,
-                                        fontSize: 16,
-                                        letterSpacing: 1.296,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          // Container(
+                          //   height: 21,
+                          //   margin: EdgeInsets.only(left: 2, right: 8, top: 10),
+                          //   child: Row(
+                          //     crossAxisAlignment: CrossAxisAlignment.stretch,
+                          //     children: [
+                          //       Align(
+                          //         alignment: Alignment.bottomLeft,
+                          //         child: Text(
+                          //           "Charge",
+                          //           textAlign: TextAlign.center,
+                          //           style: TextStyle(
+                          //             color: AppColors.primaryText,
+                          //             fontWeight: FontWeight.w400,
+                          //             fontSize: 14,
+                          //             letterSpacing: 1.134,
+                          //           ),
+                          //         ),
+                          //       ),
+                          //       Spacer(),
+                          //       Align(
+                          //         alignment: Alignment.bottomLeft,
+                          //         child: Container(
+                          //           margin: EdgeInsets.only(bottom: 2),
+                          //           child: Text(
+                          //             "Ugx. 500",
+                          //             textAlign: TextAlign.center,
+                          //             style: TextStyle(
+                          //               color: AppColors.primaryText,
+                          //               fontWeight: FontWeight.w800,
+                          //               fontSize: 16,
+                          //               letterSpacing: 1.296,
+                          //             ),
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                           Container(
                             margin:
                                 EdgeInsets.only(left: 1, right: 13, top: 10),

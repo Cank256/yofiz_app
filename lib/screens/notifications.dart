@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:yofiz/screens/menu.dart';
 import 'package:yofiz/utils/values/NotificationModel.dart';
 import 'package:yofiz/utils/values/colors.dart';
 
 class Notifications extends StatelessWidget {
-  void onMenuIconPressed(BuildContext context) {}
+  void onMenuIconPressed(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
+  }
 
   void onGroup260Pressed(BuildContext context) {}
 

@@ -23,7 +23,7 @@ class _MmNumState extends State<MmNum> {
   void onPayButtonPressed(BuildContext context) => Navigator.push(
       context, MaterialPageRoute(builder: (context) => PayPrompt()));
 
-  String serverResponse = 'Server response';
+  // String serverResponse = 'Server response';
   Key _mnum = new GlobalKey(debugLabel: 'inputText');
 
   @override
@@ -279,7 +279,7 @@ class _MmNumState extends State<MmNum> {
                       height: 52,
                       margin: EdgeInsets.only(top: 30),
                       child: RaisedButton(
-                        onPressed: () => _makeGetRequest(),
+                        onPressed: () => this.onPayButtonPressed(context),
                         color: AppColors.secondaryElement,
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
@@ -313,18 +313,18 @@ class _MmNumState extends State<MmNum> {
     );
   }
 
-  _makeGetRequest() async {
-    Response response = await get(_localhost());
-    setState(() {
-      serverResponse = response.body;
-      print(serverResponse);
-    });
-  }
+  // _makeGetRequest() async {
+  //   Response response = await get(_localhost());
+  //   setState(() {
+  //     serverResponse = response.body;
+  //     print(serverResponse);
+  //   });
+  // }
 
-  String _localhost() {
-    if (Platform.isAndroid)
-      return 'http://yofiz-momo-yofiz.apps.us-east-1.starter.openshift-online.com/';
-    else // for iOS simulator
-      return 'http://localhost:3000';
-  }
+  // String _localhost() {
+  //   if (Platform.isAndroid)
+  //     return 'http://yofiz-momo-yofiz.apps.us-east-1.starter.openshift-online.com/';
+  //   else // for iOS simulator
+  //     return 'http://localhost:3000';
+  // }
 }

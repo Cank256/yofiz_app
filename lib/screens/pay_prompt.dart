@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:yofiz/screens/pay_receipt.dart';
 import 'package:yofiz/utils/values/colors.dart';
 
 class PayPrompt extends StatelessWidget {
   void onBackIconPressed(BuildContext context) {
     Navigator.pop(context);
+  }
+
+  void onContinuePressed(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => PayReceiptWidget()));
   }
 
   void onInfoIconPressed(BuildContext context) {}
@@ -161,7 +167,7 @@ class PayPrompt extends StatelessWidget {
                         bottom: 20,
                       ),
                       child: FlatButton(
-                        onPressed: () => this.onPayButtonPressed(context),
+                        onPressed: () => this.showAlertDialog(context),
                         color: AppColors.secondaryElement,
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
@@ -257,6 +263,27 @@ class PayPrompt extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // set up the button
+    Widget okButton = FlatButton(
+      child: Text("Continue"),
+      onPressed: () => this.onContinuePressed(context),
+    ); // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Success"),
+      content: Text("Payment Was Received"),
+      actions: [
+        okButton,
+      ],
+    ); // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }

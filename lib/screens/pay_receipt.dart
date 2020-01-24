@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:yofiz/utils/values/borders.dart';
+import 'package:yofiz/screens/menu.dart';
+import 'package:yofiz/screens/notifications.dart';
+// import 'package:yofiz/utils/values/borders.dart';
 import 'package:yofiz/utils/values/colors.dart';
 import 'package:yofiz/utils/values/radii.dart';
 import 'package:yofiz/utils/values/shadows.dart';
 
 class PayReceiptWidget extends StatelessWidget {
-  void onMenuIconPressed(BuildContext context) {}
+  void onMenuIconPressed(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
+  }
 
-  void onGroup260Pressed(BuildContext context) {}
+  void onGroup260Pressed(BuildContext context) => Navigator.push(
+      context, MaterialPageRoute(builder: (context) => Notifications()));
 
   void onExportBtnPressed(BuildContext context) {}
 
@@ -45,7 +50,7 @@ class PayReceiptWidget extends StatelessWidget {
           children: [
             Positioned(
               left: 1,
-              top: 25,
+              top: 50,
               right: -1,
               bottom: 0,
               child: Column(
@@ -139,21 +144,69 @@ class PayReceiptWidget extends StatelessWidget {
                   Align(
                     alignment: Alignment.topRight,
                     child: Container(
-                      width: 291,
-                      height: 395,
-                      margin: EdgeInsets.only(top: 7, right: 29),
+                      width: 300,
+                      height: 377,
+                      margin: EdgeInsets.only(top: 19, right: 24),
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
                           Positioned(
-                            top: 49,
+                            left: 0,
                             right: 0,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Positioned(
+                                  child: Opacity(
+                                    opacity: 0.62,
+                                    child: Container(
+                                      width: 275,
+                                      height: 377,
+                                      decoration: BoxDecoration(
+                                        color: AppColors.primaryBackground,
+                                        boxShadow: [
+                                          Shadows.secondaryShadow,
+                                        ],
+                                        borderRadius: Radii.k20pxRadius,
+                                      ),
+                                      child: Container(),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  left: 0,
+                                  top: 0,
+                                  right: 0,
+                                  child: Container(
+                                    height: 366,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.primaryBackground,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Color.fromARGB(20, 0, 0, 0),
+                                          offset: Offset(0, 30),
+                                          blurRadius: 40,
+                                        ),
+                                      ],
+                                      borderRadius: Radii.k20pxRadius,
+                                    ),
+                                    child: Container(),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            left: 15,
+                            top: 30,
+                            right: 15,
+                            bottom: 20,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Container(
                                   height: 19,
-                                  margin: EdgeInsets.only(left: 3, right: 1),
+                                  margin: EdgeInsets.only(left: 2),
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
@@ -182,7 +235,7 @@ class PayReceiptWidget extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w800,
                                             fontSize: 16,
                                             letterSpacing: 1.296,
                                           ),
@@ -194,7 +247,7 @@ class PayReceiptWidget extends StatelessWidget {
                                 Container(
                                   height: 21,
                                   margin: EdgeInsets.only(
-                                      left: 2, top: 9, right: 7),
+                                      left: 1, top: 9, right: 6),
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
@@ -223,7 +276,7 @@ class PayReceiptWidget extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w800,
                                             fontSize: 16,
                                             letterSpacing: 1.296,
                                           ),
@@ -233,9 +286,9 @@ class PayReceiptWidget extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  height: 20,
+                                  height: 21,
                                   margin: EdgeInsets.only(
-                                      left: 2, top: 10, right: 10),
+                                      left: 1, top: 10, right: 9),
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
@@ -264,7 +317,7 @@ class PayReceiptWidget extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w800,
                                             fontSize: 16,
                                             letterSpacing: 1.296,
                                           ),
@@ -274,9 +327,9 @@ class PayReceiptWidget extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  height: 19,
+                                  height: 20,
                                   margin: EdgeInsets.only(
-                                      left: 2, top: 11, right: 7),
+                                      left: 1, top: 10, right: 6),
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
@@ -305,7 +358,7 @@ class PayReceiptWidget extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w800,
                                             fontSize: 16,
                                             letterSpacing: 1.296,
                                           ),
@@ -315,9 +368,8 @@ class PayReceiptWidget extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  height: 20,
-                                  margin: EdgeInsets.only(
-                                      left: 1, top: 10, right: 3),
+                                  height: 21,
+                                  margin: EdgeInsets.only(top: 9),
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
@@ -346,7 +398,7 @@ class PayReceiptWidget extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w800,
                                             fontSize: 16,
                                             letterSpacing: 1.296,
                                           ),
@@ -356,9 +408,8 @@ class PayReceiptWidget extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  height: 21,
-                                  margin: EdgeInsets.only(
-                                      left: 1, top: 9, right: 9),
+                                  height: 22,
+                                  margin: EdgeInsets.only(top: 8, right: 8),
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
@@ -387,7 +438,7 @@ class PayReceiptWidget extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w800,
                                             fontSize: 16,
                                             letterSpacing: 1.296,
                                           ),
@@ -397,9 +448,8 @@ class PayReceiptWidget extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  height: 20,
-                                  margin: EdgeInsets.only(
-                                      left: 1, top: 10, right: 12),
+                                  height: 21,
+                                  margin: EdgeInsets.only(top: 9, right: 11),
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
@@ -428,7 +478,7 @@ class PayReceiptWidget extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w800,
                                             fontSize: 16,
                                             letterSpacing: 1.296,
                                           ),
@@ -438,9 +488,9 @@ class PayReceiptWidget extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  height: 21,
+                                  height: 22,
                                   margin: EdgeInsets.only(
-                                      left: 3, top: 9, right: 8),
+                                      left: 2, top: 8, right: 7),
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
@@ -469,7 +519,7 @@ class PayReceiptWidget extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w800,
                                             fontSize: 16,
                                             letterSpacing: 1.296,
                                           ),
@@ -478,51 +528,48 @@ class PayReceiptWidget extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                Container(
-                                  height: 20,
-                                  margin: EdgeInsets.only(
-                                      left: 3, top: 10, right: 9),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
-                                    children: [
-                                      Align(
-                                        alignment: Alignment.topLeft,
-                                        child: Container(
-                                          margin: EdgeInsets.only(top: 3),
-                                          child: Text(
-                                            "Charge",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: AppColors.primaryText,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14,
-                                              letterSpacing: 1.134,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Spacer(),
-                                      Align(
-                                        alignment: Alignment.topLeft,
-                                        child: Text(
-                                          "Ugx. 500",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 16,
-                                            letterSpacing: 1.296,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Spacer(),
+                                // Container(
+                                //   height: 21,
+                                //   margin: EdgeInsets.only(left: 2, right: 8, top: 10),
+                                //   child: Row(
+                                //     crossAxisAlignment: CrossAxisAlignment.stretch,
+                                //     children: [
+                                //       Align(
+                                //         alignment: Alignment.bottomLeft,
+                                //         child: Text(
+                                //           "Charge",
+                                //           textAlign: TextAlign.center,
+                                //           style: TextStyle(
+                                //             color: AppColors.primaryText,
+                                //             fontWeight: FontWeight.w400,
+                                //             fontSize: 14,
+                                //             letterSpacing: 1.134,
+                                //           ),
+                                //         ),
+                                //       ),
+                                //       Spacer(),
+                                //       Align(
+                                //         alignment: Alignment.bottomLeft,
+                                //         child: Container(
+                                //           margin: EdgeInsets.only(bottom: 2),
+                                //           child: Text(
+                                //             "Ugx. 500",
+                                //             textAlign: TextAlign.center,
+                                //             style: TextStyle(
+                                //               color: AppColors.primaryText,
+                                //               fontWeight: FontWeight.w800,
+                                //               fontSize: 16,
+                                //               letterSpacing: 1.296,
+                                //             ),
+                                //           ),
+                                //         ),
+                                //       ),
+                                //     ],
+                                //   ),
+                                // ),
                                 Container(
                                   margin: EdgeInsets.only(
-                                      left: 2, right: 14, bottom: 23),
+                                      left: 1, right: 13, top: 10),
                                   child: Text(
                                     "Amount in Words(total)  Five Hundred Thousand Shillings Only",
                                     textAlign: TextAlign.left,
@@ -534,333 +581,133 @@ class PayReceiptWidget extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  height: 19,
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
-                                    children: [
-                                      Align(
-                                        alignment: Alignment.bottomLeft,
-                                        child: Text(
-                                          "Date/Time",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: AppColors.primaryText,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 14,
-                                            letterSpacing: 1.134,
-                                          ),
-                                        ),
-                                      ),
-                                      Spacer(),
-                                      Align(
-                                        alignment: Alignment.bottomLeft,
-                                        child: Container(
-                                          margin: EdgeInsets.only(bottom: 1),
-                                          child: Text(
-                                            "10 Dec 2019 | 12:24:23",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: AppColors.primaryText,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 16,
-                                              letterSpacing: 1.296,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
                               ],
                             ),
                           ),
-                          Positioned(
-                            top: 0,
-                            child: Image.asset(
-                              "assets/images/splash-logo.png",
-                              fit: BoxFit.none,
-                            ),
-                          ),
                         ],
                       ),
                     ),
                   ),
-                  Spacer(),
-                  Container(
-                    height: 91,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Positioned(
-                          left: 24,
-                          right: 25,
-                          bottom: 58,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Container(
-                                  width: 130,
-                                  height: 33,
-                                  child: FlatButton(
-                                    onPressed: () =>
-                                        this.onExportBtnPressed(context),
-                                    color: Color.fromARGB(0, 0, 0, 0),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(0)),
-                                    ),
-                                    textColor:
-                                        Color.fromARGB(255, 255, 255, 255),
-                                    padding: EdgeInsets.all(0),
-                                    child: Text(
-                                      "Export / Print",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Spacer(),
-                              Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Container(
-                                  width: 130,
-                                  height: 33,
-                                  child: FlatButton(
-                                    onPressed: () =>
-                                        this.onShareBtnPressed(context),
-                                    color: Color.fromARGB(0, 0, 0, 0),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(0)),
-                                    ),
-                                    textColor:
-                                        Color.fromARGB(255, 255, 255, 255),
-                                    padding: EdgeInsets.all(0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          "Share",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 255, 255, 255),
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 11,
-                                        ),
-                                        Image.asset(
-                                          "assets/images/share3.png",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          child: Stack(
-                            alignment: Alignment.topCenter,
-                            children: [
-                              Positioned(
-                                left: 0,
-                                top: 18,
-                                right: 0,
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    Positioned(
-                                      left: 0,
-                                      top: 0,
-                                      right: 0,
-                                      child: Container(
-                                        height: 47,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.primaryElement,
-                                          border: Border.fromBorderSide(
-                                              Borders.primaryBorder),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(9)),
-                                        ),
-                                        child: Container(),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      left: 13,
-                                      top: 7,
-                                      right: 13,
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.stretch,
-                                        children: [
-                                          Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Container(
-                                              width: 33,
-                                              height: 33,
-                                              child: Image.asset(
-                                                "assets/images/home-3.png",
-                                                fit: BoxFit.none,
-                                              ),
-                                            ),
-                                          ),
-                                          Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Container(
-                                              width: 35,
-                                              height: 33,
-                                              margin: EdgeInsets.only(
-                                                  left: 33, top: 1),
-                                              child: Image.asset(
-                                                "assets/images/history-3.png",
-                                                fit: BoxFit.none,
-                                              ),
-                                            ),
-                                          ),
-                                          Spacer(),
-                                          Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Container(
-                                              width: 32,
-                                              height: 32,
-                                              margin: EdgeInsets.only(
-                                                  top: 1, right: 35),
-                                              child: Image.asset(
-                                                "assets/images/mail-2.png",
-                                                fit: BoxFit.none,
-                                              ),
-                                            ),
-                                          ),
-                                          Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Container(
-                                              width: 33,
-                                              height: 33,
-                                              child: Image.asset(
-                                                "assets/images/group-274-2.png",
-                                                fit: BoxFit.none,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Positioned(
-                                top: 0,
-                                child: Image.asset(
-                                  "assets/images/ellipse-167.png",
-                                  fit: BoxFit.none,
-                                ),
-                              ),
-                              Positioned(
-                                top: 12,
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Container(
-                                        width: 36,
-                                        height: 21,
-                                        child: Image.asset(
-                                          "assets/images/pay-icon.png",
-                                          fit: BoxFit.none,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Container(
-                                        margin: EdgeInsets.only(top: 1),
-                                        child: Text(
-                                          "PAY",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color:
-                                                Color.fromARGB(255, 9, 34, 94),
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 12,
-                                            letterSpacing: 0.972,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Positioned(
-                    child: Opacity(
-                      opacity: 0.62,
-                      child: Container(
-                        width: 262,
-                        height: 427,
-                        decoration: BoxDecoration(
-                          color: AppColors.primaryBackground,
-                          boxShadow: [
-                            Shadows.secondaryShadow,
-                          ],
-                          borderRadius: Radii.k20pxRadius,
-                        ),
-                        child: Container(),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 0,
-                    top: 0,
-                    right: 0,
+                  Align(
+                    alignment: Alignment.topCenter,
                     child: Container(
-                      height: 416,
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryBackground,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(20, 0, 0, 0),
-                            offset: Offset(0, 30),
-                            blurRadius: 40,
+                      width: 235,
+                      height: 52,
+                      margin: EdgeInsets.only(top: 15),
+                      child: FlatButton(
+                        onPressed: () => this.onExportBtnPressed(context),
+                        color: AppColors.secondaryElement,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            color: Color.fromARGB(38, 112, 112, 112),
+                            width: 1,
+                            style: BorderStyle.solid,
                           ),
-                        ],
-                        borderRadius: Radii.k20pxRadius,
+                          borderRadius: BorderRadius.all(Radius.circular(26)),
+                        ),
+                        textColor: Color.fromARGB(255, 255, 255, 255),
+                        padding: EdgeInsets.all(0),
+                        child: Text(
+                          "Export / Print",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontFamily: ".SF NS Display",
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                          ),
+                        ),
                       ),
-                      child: Container(),
                     ),
                   ),
+                  // Container(
+                  //   height: 91,
+                  //   child: Stack(
+                  //     alignment: Alignment.center,
+                  //     children: [
+                  //       Positioned(
+                  //         left: 24,
+                  //         right: 25,
+                  //         child: Row(
+                  //           crossAxisAlignment: CrossAxisAlignment.stretch,
+                  //           children: [
+                  //             Align(
+                  //               alignment: Alignment.bottomLeft,
+                  //               child: Container(
+                  //                 width: 130,
+                  //                 height: 33,
+                  //                 child: FlatButton(
+                  //                   onPressed: () =>
+                  //                       this.onExportBtnPressed(context),
+                  //                   color: Color.fromARGB(0, 0, 0, 0),
+                  //                   shape: RoundedRectangleBorder(
+                  //                     borderRadius:
+                  //                         BorderRadius.all(Radius.circular(0)),
+                  //                   ),
+                  //                   textColor:
+                  //                       Color.fromARGB(255, 255, 255, 255),
+                  //                   padding: EdgeInsets.all(0),
+                  //                   child: Text(
+                  //                     "Export / Print",
+                  //                     textAlign: TextAlign.center,
+                  //                     style: TextStyle(
+                  //                       color:
+                  //                           Color.fromARGB(255, 255, 255, 255),
+                  //                       fontWeight: FontWeight.w400,
+                  //                       fontSize: 16,
+                  //                     ),
+                  //                   ),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //             Spacer(),
+                  //             Align(
+                  //               alignment: Alignment.bottomLeft,
+                  //               child: Container(
+                  //                 width: 130,
+                  //                 height: 33,
+                  //                 child: FlatButton(
+                  //                   onPressed: () =>
+                  //                       this.onShareBtnPressed(context),
+                  //                   color: Color.fromARGB(0, 0, 0, 0),
+                  //                   shape: RoundedRectangleBorder(
+                  //                     borderRadius:
+                  //                         BorderRadius.all(Radius.circular(0)),
+                  //                   ),
+                  //                   textColor:
+                  //                       Color.fromARGB(255, 255, 255, 255),
+                  //                   padding: EdgeInsets.all(0),
+                  //                   child: Row(
+                  //                     mainAxisAlignment:
+                  //                         MainAxisAlignment.center,
+                  //                     children: [
+                  //                       Text(
+                  //                         "Share",
+                  //                         textAlign: TextAlign.center,
+                  //                         style: TextStyle(
+                  //                           color: Color.fromARGB(
+                  //                               255, 255, 255, 255),
+                  //                           fontWeight: FontWeight.w400,
+                  //                           fontSize: 16,
+                  //                         ),
+                  //                       ),
+                  //                       SizedBox(
+                  //                         width: 11,
+                  //                       ),
+                  //                       Image.asset(
+                  //                         "assets/images/share3.png",
+                  //                       ),
+                  //                     ],
+                  //                   ),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           ],
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),
